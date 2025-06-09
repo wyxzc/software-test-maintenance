@@ -1,0 +1,6 @@
+删除了该目录下的以下文件：
+kpi_train_ts_data_1440_train.json
+kpi_train.csv
+kpi_test.csv
+kpi_test_ts_data_saved_scores.json
+可参考原仓库的issue部分，有人fork并更容易地复现了KPI
