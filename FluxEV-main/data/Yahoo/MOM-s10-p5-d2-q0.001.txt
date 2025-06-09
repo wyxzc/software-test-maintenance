@@ -1,0 +1,79 @@
+3个：
+Total F1/Recall/Precision score: 0.8641975308641975, 0.7777777777777778, 0.9722222222222222
+CPU-user:
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+IOCPS-w:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+IOPS-w:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+
+CPU-Total:
+Total F1/Recall/Precision score: 0.21739130434782608, 0.16666666666666666, 0.3125
+IOCPS-r:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+IOPS-r:
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+
+6个：
+Total F1/Recall/Precision score: 0.7103825136612022, 0.6190476190476191, 0.8333333333333334
+----------------------------------------
+CPU-user:
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+Yahoo\CPU-UserUsage-data
+Initial threshold : 0.05810777256223444
+Number of peaks : 2
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = 0.16351801723014336
+        σ = 0.03225776871693914
+        L = 0
+Extreme quantile (probability = 0.001): 0.1628083920828804
+
+IOCPS-read:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Yahoo\IOCPS-read-data
+Initial threshold : 9638.659920111339
+Number of peaks : 2
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = 0.22057401225432116
+        σ = 218353.8044047031
+        L = 0
+Extreme quantile (probability = 0.001): 783010.9498461918
+
+IOCPS-write:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Yahoo\IOCPS-write-data
+Initial threshold : 15470.969380157982
+Number of peaks : 2
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = 0.14889172762353003
+        σ = 118082.14928758104
+        L = 0
+Extreme quantile (probability = 0.001): 393393.27535628906
+
+IOPS-read:
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+Yahoo\IOPS-read-data
+Initial threshold : 0.1640591242924389
+Number of peaks : 2
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = 0.17629100430793793
+        σ = 5.532490866130835
+        L = 0
+Extreme quantile (probability = 0.001): 18.56381891483896
+
+IOPS-write:
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Yahoo\IOPS-write-data
+Initial threshold : 0.3720422438739581
+Number of peaks : 2
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = -0.10127690994687233
+        σ = 2.1607684886641843
+        L = 0
+Extreme quantile (probability = 0.001): 5.339934695169071
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+Total F1/Recall/Precision score: 0.967741935483871, 1.0, 0.9375
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
+Total F1/Recall/Precision score: 0.8, 0.6666666666666666, 1.0
