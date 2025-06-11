@@ -1,0 +1,12 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: checkout-pod-kill
+  namespace: chaos-testing  # Chaos Mesh 控制器的命名空间
+spec:
+  action: pod-kill         # 执行 Pod 删除操作
+  mode: all                # 删除所有匹配的 Pod
+  selector:
+    namespaces:
+      - microservice-demo         # 目标 Pod 所在的命名空间
+  duration: '30m'  # 故障持续时间

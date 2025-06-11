@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commentservice
+  namespace: microservice-demo
+spec:
+  selector:
+    matchLabels:
+      app: commentservice
+  template:
+    metadata:
+      labels:
+        app: commentservice
+    spec:
+      containers:
+      - name: server
+        image: commentservice:latest
+        ports:
+        - containerPort: 50051
+        env:
+        - name: PORT
+          value: "50051"
+        - name: DB_HOST
+          value: "mongodb-comment"
+        - name: DB_PORT
+          value: "27017"
+        readinessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+        livenessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commentservice
+  namespace: microservice-demo
+spec:
+  type: ClusterIP
+  selector:
+    app: commentservice
+  ports:
+  - name: grpc
+    port: 50051
+    targetPort: 50051
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-comment
+  namespace: microservice-demo
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-comment
+  template:
+    metadata:
+      labels:
+        app: mongodb-comment
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:4.4
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
+        volumeMounts:
+        - name: mongodb-data
+          mountPath: /data/db
+      volumes:
+      - name: mongodb-data
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-comment
+  namespace: microservice-demo
+spec:
+  type: ClusterIP
+  selector:
+    app: mongodb-comment
+  ports:
+  - name: mongodb
+    port: 27017
+    targetPort: 27017 
